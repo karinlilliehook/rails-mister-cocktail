@@ -10,4 +10,7 @@
   </li>
 </ul>
 <p><%= link_to "Add a dose to this recipe", new_cocktail_dose_path(@cocktail)  %></p>
+<p><%= link_to "Delete this recipe", cocktail_path(@cocktail), method: :delete,
+data: { confirm: "Are you sure?"} %></p>
+
 
