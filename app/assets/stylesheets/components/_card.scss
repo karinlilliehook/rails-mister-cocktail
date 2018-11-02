@@ -3,12 +3,16 @@
 }
 
 .card {
-  height: 175px;
+  height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  filter: grayscale(100%);
+}
+.card:hover {
+  filter: grayscale(0%);
 }
 
 .card-category {

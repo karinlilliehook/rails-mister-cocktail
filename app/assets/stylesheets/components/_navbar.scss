@@ -16,6 +16,10 @@
   filter: grayscale(100%);
 }
 
+.navbar-wagon-brand img:hover {
+  filter: grayscale(0%);
+}
+
 /* Right section */
 .navbar-wagon-right {
   display: flex;
