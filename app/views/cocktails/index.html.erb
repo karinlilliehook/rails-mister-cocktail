@@ -1,20 +1,23 @@
-<div class="banner">
-  <div class="banner-content">
-    <h1>FairyTails</h1>
-    <p>Where drinking comes true</p>
-    <%= link_to "Surprise me", cocktail_path(@random_cocktail), class: "btn btn-primary btn-lg" %>
-  </div>
-</div>
-
+<%= render "shared/banner" %>
 <div class="container">
-  <h2>What are you drinking tonight?</h2>
   <div class="row">
-    <% @cocktails.each do |c| %>
-    <div class="col-xs-12 col-md-3">
+    <% @cocktails.sample(4).each do |c| %>
+    <div class="col-xs-12 col-md-3 card-div">
       <%= render 'shared/card', photo: c.photo, name: c.name, link: cocktail_path(c) %>
     </div>
     <% end %>
+    <div class="col-xs-12 col-md-6 about">
+      <h4 class="btn-about">ABOUT THE INITIATIVE</h4>
+      <p>Vit Jul is a Swedish organisation working to support and protect children that are affected by alcohol consumption. Christmas holidays should be something for children look forward to, unfortunately, children living with adults that drink too much often dread spending time at home during school breaks instead.</p>
+      <p>Therefore Vit Jul’s work primarily consists of creating activities where children can get a refuge if there are problems at home. Last year they were able to reach out to over 10 000 children and made sure they were given positive christmas memories during the activities.</p>
+      <p>Children being afflicted are as many as four children in every school class in Sweden. That is way too many and the reason why I created this page to help raise awareness.</p>
+      <p>If you buy a gift from Vit Jul’s gift shop you can support their work and make sure more children feel safe during Christmas.</p>
+    </div>
+    <div class="col-xs-12 col-md-6 vitjul">
+        <%= image_tag "vitjul.svg", alt: "vit jul logo", size: "300" %>
+    </div>
+    <div class="col-xs-12 col-md-6 vitjul">
+        <%= link_to "GIVE A GIFT", "https://www.vitjul.se/ge-en-gava/", class: "btn" %>
+    </div>
   </div>
 </div>
-
-

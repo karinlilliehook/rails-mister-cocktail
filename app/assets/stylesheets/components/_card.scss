@@ -2,6 +2,10 @@
   padding: 30px;
 }
 
+.card-div {
+  padding: 10px;
+}
+
 .card {
   height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -25,10 +29,14 @@
 .card-description {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+
 }
 .card-description h2 {
   font-size: 24px;
+  color: white;
 }
 .card-description p {
   font-size: 14px;

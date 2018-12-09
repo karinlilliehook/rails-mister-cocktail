@@ -1,0 +1,10 @@
+<div class="container text-center">
+  <h1>All Mocktails</h1>
+  <div class="row">
+    <% @cocktails.each do |c| %>
+    <div class="col-xs-12 col-md-3 card-div">
+      <%= render 'shared/card', photo: c.photo, name: c.name, link: cocktail_path(c) %>
+    </div>
+    <% end %>
+  </div>
+</div>

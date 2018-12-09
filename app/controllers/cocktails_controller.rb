@@ -1,15 +1,22 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
-    @random_cocktail = @cocktails.shuffle[1]
+    @random_cocktail = Cocktail.all.sample[:id]
+  end
+
+  def all
+    @cocktails = Cocktail.all
+    @random_cocktail = Cocktail.all.sample[:id]
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
+    @random_cocktail = Cocktail.all.sample[:id]
   end
 
   def new
     @cocktail = Cocktail.new
+    @random_cocktail = Cocktail.all.sample[:id]
   end
 
   def create
@@ -30,6 +37,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :ingredient_list, :instruction)
   end
 end
